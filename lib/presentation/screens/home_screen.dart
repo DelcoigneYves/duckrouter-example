@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {
               if (router.routerDelegate.currentConfiguration.locations
                   .any((element) => element is MainRoute)) {
-                router.root();
+                router.popUntil(MainRoute());
               } else {
                 router.navigate(to: MainRoute());
               }

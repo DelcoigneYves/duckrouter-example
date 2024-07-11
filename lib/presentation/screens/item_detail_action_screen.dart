@@ -14,7 +14,7 @@ class ItemDetailActionScreen extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              router.root();
+              router.popUntil(ItemListRoute());
             },
             child: const Text('Back to root'),
           ),

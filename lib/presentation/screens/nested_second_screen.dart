@@ -6,26 +6,6 @@ class NestedSecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return WillPopScope(
-    //   onWillPop: () async {
-    //     final canPop = await showDialog(
-    //       context: context,
-    //       builder: (context) {
-    //         return AlertDialog.adaptive(
-    //           title: Text('Warning'),
-    //           content: Text('Pop or drop'),
-    //           actions: [ElevatedButton(onPressed: () => Navigator.of(context).pop(true), child: Text('Pop'))],
-    //         );
-    //       },
-    //     );
-
-    //     if (canPop) {
-    //       context.pop();
-    //       return false;
-    //     }
-
-    //     return true;
-    //   },
     return PopScope(
       onPopInvoked: (didPop) async {
         // This is not working as expected! didPop is always true.
@@ -72,7 +52,7 @@ class NestedSecondScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                router.root();
+                router.popUntil(MainRoute());
               },
               child: const Text('Root'),
             ),

@@ -28,7 +28,7 @@ class DetailScreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              router.root();
+              router.popUntil(MainRoute());
             },
             child: const Text('Root'),
           ),

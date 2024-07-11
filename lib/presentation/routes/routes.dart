@@ -117,10 +117,10 @@ class NestedRootRoute extends StatefulLocation {
           );
 
   @override
-  List<StatefulChildLocation> get children => [NestedMainRoute()];
+  List<Location> get children => [NestedMainRoute()];
 }
 
-class NestedMainRoute extends StatefulChildLocation {
+class NestedMainRoute extends Location {
   @override
   String get path => '/nested/main';
 
@@ -158,10 +158,10 @@ class ItemListRootRoute extends StatefulLocation {
   StatefulLocationBuilder get childBuilder => (context, shell) => shell;
 
   @override
-  List<StatefulChildLocation> get children => [ItemListRoute()];
+  List<Location> get children => [ItemListRoute()];
 }
 
-class ItemListRoute extends StatefulChildLocation {
+class ItemListRoute extends Location {
   @override
   String get path => '/itemlist';
 
@@ -176,7 +176,7 @@ class ItemListRoute extends StatefulChildLocation {
   LocationBuilder get builder => (_) => const ItemListScreen();
 }
 
-class ItemDetailRoute extends StatefulChildLocation {
+class ItemDetailRoute extends Location {
   @override
   String get path => '/itemdetail';
 
@@ -191,7 +191,7 @@ class ItemDetailRoute extends StatefulChildLocation {
   LocationBuilder get builder => (_) => const ItemDetailScreen();
 }
 
-class ItemDetailActionRoute extends StatefulChildLocation {
+class ItemDetailActionRoute extends Location {
   @override
   String get path => '/itemdetailaction';
 
